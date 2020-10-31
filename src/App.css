@@ -1,3 +1,44 @@
+.App-HeaderNavi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffff74;
+  padding: 8px 12px;
+}
+
+body{
+  margin: 0;
+  font-family: 'Source Sans Pro';
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.App-HeaderBackground {
+  background: #ffff74;
+}
+
+.App-HeaderTitle{
+  display: flex;
+  justify-content: space-between;
+  background: #ffec44;
+  color: black;
+  font-size: 30px;
+  padding: 8px 12px;
+  align-items: center;
+}
+
+.App-HeaderMenu {
+  display: flex;
+  list-style: none;
+  background: #ffec44;
+  color: black;
+  font-size: 16px;
+  padding: 8px 12px;
+}
+
 .App {
   background: black;
   color: aqua;
@@ -15,6 +56,8 @@
   font-weight: 600;
   text-align: center;
 }
+
+
 
 .App-logo {
   height: 40vmin;

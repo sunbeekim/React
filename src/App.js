@@ -3,6 +3,10 @@ import React, {Component} from 'react';
 import './App.css'
 import MyName from './MyName.js';
 import Counter from './Counter.js';
+import HeaderBackground from './HeaderBackground.js';
+import HeaderNavi from './HeaderNavi.js';
+
+import HeaderTitle from './HeaderTitle.js';
 
 class App extends Component{
   render(){
@@ -33,7 +37,14 @@ class App extends Component{
           <MyName name = "SUN"/> {/*easy component - MyName.js import 클래스형 컴포넌이지만 간단하므로 함수형으로 바꿔도 무관*/}
         </div>
         <div className = "App">
-          <Counter/>
+            <Counter/>
+        </div>
+        <div>
+          <i>hello</i>
+          <p>world</p>
+
+          <HeaderNavi/>
+      
         </div>
       </div>
     );
