@@ -1,0 +1,10 @@
+.title{
+  font-size: 20px;
+}
+
+.title a{
+  padding-left: 10px;
+  font-size: 50px;
+  color: white;
+  text-decoration: none;
+}

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './HeaderMenu.css'
 
 class HeaderMenu extends Component {
   //class 컴포넌트
@@ -7,10 +8,9 @@ class HeaderMenu extends Component {
   }
   render(){
     return(
-
-
-        <a className = "App-HeaderMenu" href =""><b>{this.props.name}</b></a>
-
+      <ul className="navi_menu">
+        <li><a href ="">{this.props.name}</a></li>
+      </ul>
     )
   }
 }

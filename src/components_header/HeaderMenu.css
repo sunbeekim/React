@@ -1,0 +1,39 @@
+.navi_menu{
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.navi_menu li{
+  color: white;
+  text-decoration: none;
+  width: 100%;
+}
+
+
+.navi_menu a{
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 6px 20px;
+  font-size: 24px;
+}
+
+.navi_menu a:hover{
+  background-color: #50bcdf;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  .navi_menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navi_menu.active{
+    display: block;
+  }
+}

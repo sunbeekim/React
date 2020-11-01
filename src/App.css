@@ -1,51 +1,47 @@
-.App-HeaderNavi {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #ffff74;
-  padding: 8px 12px;
-}
+/*
+justifyContent
+flexDirection이 column인지 row인지에 따라 가로 세로 기준이 바뀐다.
+
+flexDirection을 기준으로 수평한 형태로 정렬한다.
+
+예를 들어, flexDirection: column 이라면, 가로로 나열하는 것이니
+
+justifyContent 역시 가로로 정렬하는 옵션이 된다.
+
+flex-start - alignItems와 동일하게 동작함
+
+가로 정렬 기준, 좌측(시작점)
+
+center - alignItems와 동일하게 동작함
+
+가로 정렬 기준 가운데
+
+flex-end - alignItems와 동일하게 동작함
+
+가로 정렬 기준 우측
+
+space-between
+
+양 끝을 기점으로 요소간의 거리를 균등하게 정렬
+
+ space-around
+
+모든 요소를 균등하게 정렬한 뒤 각각을 가운데 정렬함
+https://zladnrms.tistory.com/73
+*/
+
+
+
+
 
 body{
   margin: 0;
-  font-family: 'Source Sans Pro';
+  font-family: 'Nanum Myeongjo', serif;
 }
 
 a {
   text-decoration: none;
   color: white;
-}
-
-.App-HeaderBackground {
-  background: #ffff74;
-}
-
-.App-HeaderTitle{
-  display: flex;
-  justify-content: space-between;
-  background: #ffec44;
-  color: black;
-  font-size: 30px;
-  padding: 8px 12px;
-  align-items: center;
-}
-
-.App-HeaderMenu {
-  display: flex;
-  list-style: none;
-  background: #ffec44;
-  color: black;
-  font-size: 16px;
-  padding: 8px 12px;
-}
-
-.App {
-  background: black;
-  color: aqua;
-  font-size: 36px;
-  padding: 1rem;
-  font-weight: 600;
-  text-align: center;
 }
 
 .App-Counter {
@@ -58,38 +54,40 @@ a {
 }
 
 
+@media only screen and(max-width: 780px){
+  .navbar{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar__menu{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .navbar__menu li{
+    width: 100%;
+    text-align: center;
+  }
+  .navbar__icons{
+    justify-content: center;
+    width: 100%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+
+
+
+.navbar__toogle{
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: #ffffff;
 }
 
-.App-link {
-  color: #61dafb;
-}
+.navbar__toogle{
+  display: block;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

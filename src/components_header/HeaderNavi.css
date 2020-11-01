@@ -1,0 +1,14 @@
+.navi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background: #1d9abc;
+  padding : 8px 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .navi{
+    flex-direction: column;
+  }
+}

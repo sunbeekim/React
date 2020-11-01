@@ -1,0 +1,26 @@
+.icons{
+  padding-left: 0;
+  list-style: none;
+  color: white;
+  display: flex;
+}
+
+.icons li {
+  padding: 8px 12px;
+}
+
+.icons i {
+  display: block;
+  color: white;
+  padding: 8px 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .icons{
+    display: none;
+  }
+
+  .icons.active{
+    display: block;
+  }
+}
