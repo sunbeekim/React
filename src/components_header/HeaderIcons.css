@@ -21,6 +21,6 @@
   }
 
   .icons.active{
-    display: block;
+    display: flex;
   }
 }

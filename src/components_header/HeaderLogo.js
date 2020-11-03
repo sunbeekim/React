@@ -6,8 +6,8 @@ class HeaderLogo extends Component {
 
   render(){
     return(
-      <div class="logo">
-        <i class="fab fa-yarn"></i>
+      <div className="logo">
+        <i className="fab fa-yarn"></i>
       </div>
     )
   }

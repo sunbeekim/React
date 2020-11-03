@@ -6,8 +6,8 @@ class HeaderIcons extends Component {
 
   render(){
     return(
-      <ul className="icons">
-        <li><i class="far fa-check-circle"></i></li>
+      <ul className="icons" id="icon">
+        <li><i className="far fa-check-circle"></i></li>
         {/*<li><i class="fab fa-500px"></i></li>*/}
       </ul>
     )
