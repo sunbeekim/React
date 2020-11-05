@@ -17,10 +17,7 @@
 
 @media screen and (max-width: 768px) {
   .icons{
-    display: none;
-  }
-
-  .icons.active{
-    display: flex;
+    padding-left: 0;
+    margin-right: 40px;
   }
 }

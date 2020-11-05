@@ -1,13 +1,15 @@
 .navi_menu{
   display: flex;
   list-style: none;
-  padding-left: 0;
-  margin-top: 20px;
+  padding-left: 0px;
+  margin-right: 40px;
+  margin-top: 10px;
 }
 
 .navi_menu li{
+  display: block;
   color: white;
-  text-decoration: none;
+  align-items: center;
   width: 100%;
 }
 
@@ -16,8 +18,10 @@
   display: block;
   color: white;
   text-decoration: none;
-  padding: 6px 20px;
-  font-size: 24px;
+  align-items: baseline;
+  text-align: center;
+  padding: 8px 20px;
+  font-size: 30px;
 }
 
 .navi_menu a:hover{
@@ -27,13 +31,6 @@
 
 @media screen and (max-width: 768px) {
   .navi_menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
-  }
-
-  .navi_menu.active{
-    display: none;
   }
 }

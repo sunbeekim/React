@@ -1,34 +1,13 @@
 import React, {Component} from 'react';
 import './HeaderToogle.css';
-import './HeaderMenu.css';
-import './HeaderIcons.css';
 
-import HeaderMenu from './HeaderMenu.js';
-
-const menu = document.querySelectorAll('.navi_menu');
-const icons = document.querySelector('.icons')
 class HeaderToogle extends Component {
   //class 컴포넌트
-
-  constructor(props) {
-      super(props);
-      this.state = {isToggleOn: true};
-
-      // This binding is necessary to make `this` work in the callback
-      this.handleClick = this.handleClick.bind(this);
-    }
-
-    handleClick() {
-      this.setState(prevState => ({
-        isToggleOn: !prevState.isToggleOn
-      }));
-    }
 
   render(){
     return(
       <a href="#" className="toogle">
-        <i className="fas fa-bars" onClick={this.handleClick}>
-          {this.state.isToggleOn ? 'on' : 'off'}
+        <i className="fas fa-bars" >
         </i>
       </a>
 

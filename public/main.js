@@ -1,9 +1,6 @@
-const toggleBtn = document.getElementsByClassName('toogle');
-const menu = document.getElementsByClassName('navi_menu');
-const icons = document.getElementsByClassName('icons');
+const toggleBtn = document.querySelector('.toogle');
+const menu = document.getElementById("toggle");
 
 toggleBtn.addEventListener('click', () => {
-  menu.classList.add("active");
-  console.log("2");
-  icons.classList.toggle("active");
+  menu.classList.toggle('active');
 })

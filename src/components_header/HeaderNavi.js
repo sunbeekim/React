@@ -7,37 +7,32 @@ import HeaderIcons from './HeaderIcons.js'
 import HeaderToogle from './HeaderToogle.js'
 
 
-const test_1 = 'navi_menu';
-const test_2 = 'navi_menu.active';
 
 class HeaderNavi extends Component {
   //class 컴포넌트
-  state = {
-    isToggle : true
-  }
-
-  toggleBox = () => {
-    this.setState (prevState => ({isToggle :! prevState.isToggle}));
-  };
 
 
   render(){
-    const {isBoxVisible} = this.state;
+
     return(
+      <div className="header">
       <nav className="navi">
-        <div className="navi">
+        <div className="titlebar">
         <HeaderLogo/>
         <HeaderTitle title = "Group three"/>
         </div>
-
+        <menu className="menu_bar" id="toggle">
         <HeaderMenu name = "hello"/>
         <HeaderMenu name = "world"/>
         <HeaderMenu name = "bye"/>
         <HeaderMenu name = "setting"/>
         <HeaderIcons/>
-        {/* <HeaderToogle/> 나중에 수정할 것*/}
-
+        </menu>
+        <HeaderToogle/>
       </nav>
+      </div>
+
+
     )
   }
 }

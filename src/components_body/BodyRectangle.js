@@ -8,12 +8,13 @@ class BodyRectangle extends Component {
   //--이미지 경로를 BodyRectangle class 내에서 변경할 수 있게 해야 함
   render(){
     return(
-      <div class="img">
-        <div class="content">
+
+      <div className="img">
+        <div className="content">
             <h1>Hello!</h1>
             <h2>We<br></br>are Group three</h2>
         </div>
-        <div class="img-cover"></div>
+        <div className="img-cover"></div>
     </div>
     )
   }
