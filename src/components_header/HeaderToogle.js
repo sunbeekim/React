@@ -6,8 +6,9 @@ class HeaderToogle extends Component {
 
   render(){
     return(
+
       <a href="#" className="toogle">
-        <i className="fas fa-bars" >
+        <i className="fas fa-bars">
         </i>
       </a>
 
