@@ -9,12 +9,12 @@ class Bottom extends Component {
 
     return(
       <div className="bottom">
-        <i class="fas fa-battery-empty"></i>
-        <i class="fas fa-battery-quarter"></i>
-        <i class="fas fa-battery-half"></i>
-        <i class="fas fa-battery-three-quarters"></i>
-        <i class="fas fa-battery-full"></i>
-        <i class="fas fa-atom"></i>
+        <i className="fas fa-battery-empty"></i>
+        <i className="fas fa-battery-quarter"></i>
+        <i className="fas fa-battery-half"></i>
+        <i className="fas fa-battery-three-quarters"></i>
+        <i className="fas fa-battery-full"></i>
+        <i className="fas fa-atom"></i>
         bottom free!!
 
       </div>

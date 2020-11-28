@@ -23,11 +23,46 @@
   width: 100%;
 }
 
+.input {
+  height: 40px;
+  background-color: #99def4;
+  width: 200px;
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+  font-size:  22px;
+  padding: 8px;
+  border-radius:  10px;
+}
+.letters {
+  display: flex;
+  height: 140px;
+}
+
 
 
 @media screen and (max-width: 768px) {
   .gr_1{
     margin-top: 200px;
     width: 100%;
+    font-size: 11px;
+    align-items: center;
   }
+
+  .input {
+    height: 30px;
+    background-color: #99def4;
+    width: 100px;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+    font-size:  11px;
+    padding: 4px;
+    border-radius:  10px;
+  }
+  .letters {
+    display: flex;
+    height: 70px;
+  }
+
 }

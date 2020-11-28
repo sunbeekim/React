@@ -2,12 +2,19 @@ import React, {Component} from 'react';
 import Test2 from './Test2.js';
 
 class Test extends Component{
+  constructor(props) {
+   super(props);
+
+  }
   static defaultProps = {
     data: [],
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return nextProps.data !== this.props.data;
+    if(this.props.data !== nextProps.data){
+      return true;
+    }
+    return false;
   }
 
   render(){
@@ -16,7 +23,7 @@ class Test extends Component{
     const list = data.map(
       info => (
         <Test2
-          key={info.id}
+          key={info.number}
           info={info}
         />)
     );
