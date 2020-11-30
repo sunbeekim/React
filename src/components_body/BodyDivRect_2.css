@@ -32,3 +32,11 @@
   display: flex;
   align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+  .rect_2{
+    margin: 70px 10% 30px 0px;
+    text-align: center;
+    width: 100%;
+  }
+}

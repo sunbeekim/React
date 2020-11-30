@@ -30,7 +30,8 @@
 
 @media screen and (max-width: 768px) {
   .img{
-    margin-top: 70px;
+    margin-top: 120px;
     margin-left: 0%;
+    margin-right: 10%;
   }
 }

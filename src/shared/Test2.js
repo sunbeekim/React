@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import HighCharts from './High.js';
-
+import './Test2.css';
 
 const chaneArray = [];
 class Test2 extends Component{
@@ -75,21 +75,29 @@ class Test2 extends Component{
         // console.log(typeof chan_1);
     return(
       <div>
+      <HighCharts
+        data={[chan_1,chan_2,chan_3,chan_4,chan_5,chan_6,chan_7,chan_8,chan_9,chan_10]} title={year} type="pie" name={year}/>
+        <table>
+          <tbody>
+            <tr className="font">
+              <td>| 연도 : {year} |</td>
+              <td> 평균기온 : {average_temperature} |</td>
+              <td> 최고기온 : {the_highest_temperature} |</td>
+              <td> 최저기온 : {minimum_temperature} |</td>
+              <td> 합계강수량 : {Total_steel_quantity} |</td>
+              <td> 평균풍속 : {average_wind_speed} |</td>
+              <td> 최대풍속 : {maximum_wind_speed} |</td>
+              <td> 최대순간풍속 : {maximum_instantaneous_wind_speed} |</td>
+              <td> 평균상대습도 : {mean_relative_humidity} |</td>
+              <td> 합계일조시간 : {Total_daily_work_hour} |</td>
+              <td> 평균지면온도 : {average_ground_temperature} |</td>
+              <td> 총 생산량 : {gross_output_volume} |</td>
+            </tr>
 
-        <b>|| {year} ||</b>
-        <b> {average_temperature} ||</b>
-        <b> {the_highest_temperature} ||</b>
-        <b> {minimum_temperature} ||</b>
-        <b> {Total_steel_quantity} ||</b>
-        <b> {average_wind_speed} ||</b>
-        <b> {maximum_wind_speed} ||</b>
-        <b> {maximum_instantaneous_wind_speed} ||</b>
-        <b> {mean_relative_humidity} ||</b>
-        <b> {Total_daily_work_hour} ||</b>
-        <b> {average_ground_temperature} ||</b>
-        <b> 총 생산량 {gross_output_volume} ||</b>
-        <HighCharts
-          data={[chan_1,chan_2,chan_3,chan_4,chan_5,chan_6,chan_7,chan_8,chan_9,chan_10]} title={year} type="pie" name={year}/>
+          </tbody>
+        </table>
+
+
 
       </div>
     );

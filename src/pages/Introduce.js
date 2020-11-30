@@ -25,17 +25,17 @@ class Introduce extends Component {
               <h2> Group three</h2>
           </div>
             <div className="it_4">
-            <i class="fas fa-address-card"></i>
+            <i className="fas fa-address-card"></i>
               <h3>팀     장 : 김 경수</h3>
 
             </div>
             <div className="it_4">
-              <i class="far fa-address-card"></i>
+              <i className="far fa-address-card"></i>
               <h3>팀     원 : 김 선비</h3>
 
             </div>
             <div className="it_4">
-            <i class="fas fa-address-card"></i>
+            <i className="fas fa-address-card"></i>
               <h3>팀     원 : 박 효정</h3>
 
             </div>

@@ -13,7 +13,8 @@ class High extends Component {
       const series2 = this.props.data;
       const title = this.props.title;
       const name = this.props.name;
-      const type = this.props.type;  //App.js에서 데이터를 보내줄 예정
+      const type = this.props.type;
+      const category = this.props.category;  //App.js에서 데이터를 보내줄 예정
              const options = {
                  chart: {
                      type: type		// bar차트. 아무 설정이 없으면 line chart가 된다.
@@ -25,7 +26,7 @@ class High extends Component {
                      enabled: false
                  },
                  xAxis: {
-                     type: 'category'
+                     categories: category
                  },
                  legend: {
                      reversed: true

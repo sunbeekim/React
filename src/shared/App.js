@@ -13,12 +13,15 @@ class App extends Component{
     }
   }
 
-  componentDidMount() {
-    fetch('http://localhost:3001/api')
-      .then(res => res.json())
-      .then(data => this.setState({title: data.title}));
-  }
+  // componentDidMount() {
+  //   fetch('http://localhost:3001/api')
+  //     .then(res => res.json())
+  //     .then(data => this.setState({title: data.title}));
+  // }
 
+  // <div>
+  //   {this.state.title? <h1>{this.state.title}</h1>:<h1>loading...</h1>}
+  // </div>
   render(){
     return(
       <div>
@@ -30,9 +33,7 @@ class App extends Component{
         <Route path="/h3" component={GraphStatistics}/>
         <Bottom/>
         </div>
-        <div>
-          {this.state.title? <h1>{this.state.title}</h1>:<h1>loading...</h1>}
-        </div>
+
       </div>
     );
   }
