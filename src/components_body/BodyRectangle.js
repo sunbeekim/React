@@ -12,7 +12,7 @@ class BodyRectangle extends Component {
       <div className="img">
         <div className="content">
             <h1>Hello!</h1>
-            <h2>We<br></br>are Group three</h2>
+            <h2>We're<br></br>Group three</h2>
         </div>
         <div className="img-cover"></div>
     </div>

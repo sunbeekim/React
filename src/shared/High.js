@@ -28,6 +28,7 @@ class High extends Component {
                  xAxis: {
                      categories: category
                  },
+                
                  legend: {
                      reversed: true
                  },
@@ -40,13 +41,15 @@ class High extends Component {
                          }
                      }
                  },
-                 series: [{ name: name, data: series2 }]
+                 series: [{ name: name, data: series2,  }]
 
              }
         return (
+          <div>
             <Fragment>
                 <HighchartsReact highcharts={Highcharts} options={options} />
             </Fragment>
+          </div>
         );
     }
 }

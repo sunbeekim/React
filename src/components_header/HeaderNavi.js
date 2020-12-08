@@ -29,12 +29,12 @@ class HeaderNavi extends Component {
         <HeaderMenu name = "Introduce" pagename="/h1"/>
 
 
-        <HeaderMenu name = "TextualStatistics" pagename="/h2"/>
+        <HeaderMenu name = "TreeStructure" pagename="/h2"/>
 
 
         <HeaderMenu name = "GraphStatistics" pagename="/h3"/>
 
-        <HeaderIcons/>
+        <HeaderIcons pagename="/github"/>
 
         </menu>
         <HeaderToogle/>

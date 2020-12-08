@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Test2 from './Test2.js';
 
+
 class Test extends Component{
   constructor(props) {
    super(props);
@@ -29,10 +30,13 @@ class Test extends Component{
     );
     return(
       <div>
-        {list}
+       {list}
       </div>
+
     );
   }
 }
+
+
 
 export default Test;

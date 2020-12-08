@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import HighCharts from './High.js';
 import './Test2.css';
+import { Fragment } from "react";
 
 const chaneArray = [];
 class Test2 extends Component{
@@ -80,7 +81,7 @@ class Test2 extends Component{
         <table>
           <tbody>
             <tr className="font">
-              <td>| 연도 : {year} |</td>
+              <td> 연도 : {year} |</td>
               <td> 평균기온 : {average_temperature} |</td>
               <td> 최고기온 : {the_highest_temperature} |</td>
               <td> 최저기온 : {minimum_temperature} |</td>

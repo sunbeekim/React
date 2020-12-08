@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import './TextualStatistics.css';
 import algo from './algo.png';
+import Bottom from '../components_bottom/Bottom.js';
 
 class TextualStatistics extends Component {
   //class 컴포넌트
@@ -11,11 +12,14 @@ class TextualStatistics extends Component {
     return(
       <div>
         <div className="ts_1">
-          <h1>TextualStatistics 화면 입니다</h1>
-          <h3> 데이터를 나타내거나 표시하는 화면</h3>
+          <h1>알고리즘 트리구조</h1>
+        
         </div>
         <div>
           <img src={algo} className="algo"/>
+        </div>
+        <div>
+          <Bottom/>
         </div>
       </div>
     )

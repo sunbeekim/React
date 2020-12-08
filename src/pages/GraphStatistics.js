@@ -8,8 +8,8 @@ import HighCharts from '../shared/High.js';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 import Bottom from '../components_bottom/Bottom.js';
-
-
+import {Motion, spring} from 'react-motion';
+import LoadingSVG from './LoadingSVG.js';
 
 console.log(objectData["year"]);
 
@@ -26,43 +26,39 @@ const VelocityLetter = ({ letter }) => (
 class GraphStatistics extends Component {
   //class 컴포넌트
   constructor(props) {
-  super(props);
+    super(props);
   }
 
   state = {
+    loading: true,
     letters: [],
     users: objectData,
     info: objectData,
     keyword:'',
     test: objectData.year,
+    height: 500,
     test2: [{
       2000:{
         year:2000,
         id : 0,
         context : "hello",
       },
-      2001:{
-        year:2001,
-        id : 1,
-        context : "hello",
-      },
-      2002:{
-        year:2002,
-        id : 2,
-        context : "hello",
-      },
     }
     ]
   }
-
-
-
+  progress = () => {
+      const { completed } = this.state; //state자체를 completed라는 지역변수로 다시 설정
+      this.setState({
+        completed: completed >= 100 ? 0 : completed + 1
+      });
+  }
 
   // componentDidMount() {
   //   fetch('http://localhost:4500/todos')
   //     .then(res => res.json(this.state.users))
   //
   // }
+
 
   onChange = (e) => {
     const keyword = e.target.value;
@@ -72,23 +68,24 @@ class GraphStatistics extends Component {
       arr.push(<VelocityLetter letter={l} />)
     })
     this.setState(() => ({ keyword: keyword,
-                          letters: arr }))
+                          letters: arr,
+                          loading: true,
+                         }))
+    this.timerHandle = setTimeout(() => this.setState({ loading: false }), 1500);
+
+  }
+  componentDidMount() {
+      this.timerHandle = setTimeout(() => this.setState({ loading: false }), 3000);
+  }
+
+  componentWillUnmount(){
+      if (this.timerHandle) {
+        clearTimeout(this.timerHandle);
+        this.timerHandle = 0;
+      }
   }
 
   render(){
-    // console.log(this.state.test2);
-    // const {
-    //       year, average_temperature, the_highest_temperature,
-    //       minimum_temperature,
-    //       Total_steel_quantity,
-    //       average_wind_speed,
-    //       maximum_wind_speed,
-    //       maximum_instantaneous_wind_speed,
-    //       mean_relative_humidity,
-    //       Total_daily_work_hour,
-    //       average_ground_temperature,
-    //       gross_output_volume,
-    //     } = this.state.users;
 
     const {info, keyword } = this.state;
     const filteredList = info.filter(
@@ -135,9 +132,14 @@ class GraphStatistics extends Component {
           </br>
         </div>
         <div className="gr_2">
-          <h3>통계 및 예측 데이터 출력화면 입니다</h3>
-          <div className="container">
-            <input placeholder=""  value={keyword} onChange={this.onChange} className="input" />
+          <div>
+            <i className="fas fa-chart-pie"></i>
+            <i> chart </i>
+          </div>
+
+          <div>
+            <input placeholder="검색"  value={keyword} onChange={this.onChange} className="input" />
+
             <div className="letters">
               {
                 this.state.letters
@@ -146,14 +148,13 @@ class GraphStatistics extends Component {
           </div>
         </div>
         <div className="gr_3">
-          <h3>통계 및 예측 데이터 출력화면 입니다</h3>
+          <h3>통계 및 차트 데이터</h3>
+
         </div>
         <div>
-
-          <Test data={filteredList}/>
-
-
+          {this.state.loading ? <LoadingSVG/> : <Test data={filteredList}/>}
         </div>
+
       <div>
       <HighCharts
         data={result_11} title="연도별 총 생산량" type="line" name="gross_output_volume" category={result_0}/>
@@ -188,9 +189,10 @@ class GraphStatistics extends Component {
 }
 
 const styles = {
+
   letter: {
     opacity: 0,
-    marginTop: 100,
+    marginTop: '100%',
     marginLeft: 1,
     fontSize: 22,
     whiteSpace: 'pre',

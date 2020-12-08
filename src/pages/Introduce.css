@@ -1,12 +1,18 @@
+.it_top{
+  display: flex;
+  flex-direction: column;
+}
 .it_1{
+
   margin-top: 128px;
   width: 80%;
-  height: 120vh;
+  height: 110vh;
   margin-left: 10%;
   margin-right: 10%;
 }
 
 .it_2{
+
   display: flex;
   margin-right: 20px;
   float: right;
@@ -29,6 +35,7 @@
 .it_4{
   display: flex;
   text-align: right;
+  font-size: 3vh;
   background-color : #7dc2d8;
   color : #ffffff;
   justify-content: space-around;
@@ -36,10 +43,14 @@
 }
 
 .it_1 i{
-  color: #ffffff;
-  font-size: 50px;
+  color: #335763;
+
+  font-size: 5vh;
   padding-right: 20px;
+  font-style: normal;
 }
+
+
 
 @media screen and (max-width: 768px) {
   .it_1{
