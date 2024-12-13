@@ -1,0 +1,36 @@
+.navi_menu{
+  display: flex;
+  list-style: none;
+  padding-left: 0px;
+  margin-right: 40px;
+  margin-top: 10px;
+}
+
+.navi_menu li{
+  display: block;
+  color: white;
+  align-items: center;
+  width: 100%;
+}
+
+
+.navi_menu a{
+  display: block;
+  color: white;
+  text-decoration: none;
+  align-items: baseline;
+  text-align: center;
+  padding: 8px 20px;
+  font-size: 30px;
+}
+
+.navi_menu a:hover{
+  background-color: #50bcdf;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  .navi_menu {
+    width: 100%;
+  }
+}

@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import BodyView from './components_body/BodyView.js';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App/>
+    <BodyView/>
   </React.StrictMode>,
   document.getElementById('root')
 );

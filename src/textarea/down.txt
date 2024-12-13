@@ -1,0 +1,102 @@
+1. 2020-10-29
+react-native 이르다 판단함
+react 설치
+
+window 10 install - yarn
+//윈도우 10에서 yarn을 설치하기 위해서는 node.js가 설치돼 있어야 함
+//yarn은 npm(패키지관리)의 상위개념으로 쓰면 좋음
+//yarn을 설치하기 위해 scoop을 통해 설치할 것임
+
+window key -> cmd -> powershell 
+//powershell의 버전이 5.0이상인지 확인해야함
+//윈도우 7, 윈도우 서버 2008 이전버전인 경우 설치되어 있지 않을 수 있음
+-> $psversiontable.psversion.magor(버전확인)
+-> set-executionpolicy remotesigned -scope currentuser
+//제한되는 스크립트가 있는지 확인
+//스쿱 설치 url 경로
+-> Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+or -> iwr - useb get.scoop.sh | iex
+//스쿱의 지정디렉토리와 관리자전역디렉토리 설치중 user 디렉토리로 설치
+$env:SCOOP='C:\scoop'
+[environment]::setEnvironmentVariable('SCOOP',$env:SCOOP,'User')
+iwr -useb get.scoop.sh | iex
+
+https://github.com/lukesampson/scoop/wiki/Quick-Start
+https://classic.yarnpkg.com/en/docs/install#windows-stable
+
+//*PS보다 git base에 더 가까움
+//yarn 설치
+->scoop install yarn
+//react app 설치
+->npm install -g create-react-app
+//create-react-app hello-react
+//cd hello-react
+//yarn start
+
+2. 2020-10-31
+프론트엔드 개발자 로드맵
+1)인터넷은 어떻게 작동될까?
+  - www라는 최초의 브라우저가 사용자들의 정보공유를 목적으로 만들어진 하나의 공간을 이어주기 위해 생긴 네트워크 통신
+  - a의 컴퓨터가 b(web site)에게 데이터를 요청 할 때 b컴퓨터는 a로부터 받은 데이터의 값을 프로시저에 대입해 반환값을 받고(7계층)
+  - a의 컴퓨터로 보내기 전 반환값을 통신에 유리한 형태로 변환하고(6계층)
+  - b는 a로부터 받았던 요청값 중 port를 기반으로 반환값 전송이 완료될때까지 세션을 유지하고(5계층)
+  - 반환값의 헤더에 송수신지의 유효성 체크, 전송 실패시 재전송 등의 신뢰성 있는 통신을 보장하고(4계층)//게이트웨이 isp기지국?세그먼트 단위 데이터
+  - 상위계층의 데이터들을 패킷에 캡슐화하여 라우터는 브릿지나 스위치로 패킷을 전송하고(3계층) 패킷{세크먼트{}반환값{}} //ip
+  - 상위계층으로부터 받은 패킷을 브릿지나 스위치는 데이터 단위를 프레임으로 변환하고 프레임을 전송함(2계층) 프레임{}
+  - 프레임에 담긴 mac에 따라 물리적(무선 lan, lan선 등)으로 오게 된 데이터는 a의 컴퓨터에 입력됨(1계층)
+  
+2) http와 브라우저 동작원리?
+ - http는 통신 프로토콜로써 일종의 규칙 ex) a가 b에게 데이터를 보낼 때 : http의 규칙에 의해 문서화 된 절차대로 데이터를 보냄, html문서를 주고받는데 주로 쓰임
+ - 브라우저의 동작원리?
+    내가 주소창에 아무것도 적지 않는다면 브라우저에는 아무것도 뜨지 않을 것이다. 브라우저의 종류는 explorer, chrome, safari 등등 많지만 www브라우저를 기반으로 만들어 졌고 www를
+    만든 버너스 리는 http 규칙을 만들어 html문서를 규격화 된 통신 방법으로 통일되게 받게 함으로써, 브라우저는 서버로부터 html을 받을 때 http 규칙에 맞게 받음으로써 효율적이고 약한
+    불변성을 가지게 됨
+    //www는 호스트가 브라우저라고 나타내기도 함 - 데스크탑에서는 www.naver.com 이지만 휴대폰에서는 m.naver.com이라고 하는 이유
+    즉, 브라우저는 html을 사용자가 http를 몰라도 쉽게 받을 수 있게 도와주는 응용프로그램임
+    주소창에 naver.com을 적고 엔터를 친다면 주소창에 적힌 naver.com을 찾기위해 브라우저는 나의 mac, ip, port, naver.com 등의 정보를 묶고 dns서버로 보낸다
+    dns에서 com -> naver 순으로 찾아 일치하는 값이 있으면 naver.com의 ip주소를 반환값에 저장한다
+    dns는 naver.com의 http://125.209.222.141/을 알려준다
+    나의 브라우저는 http://125.209.222.141/ 서버에게 html을 요청하고 서버에 설정된 예외처리(방화벽, 보안위협 등)가 되지 않으면 서버는 html과 css를 묶어 http 규칙으로 응답한다
+    서버는 물리계층으로 부터 들어온 나의 데이터값과 html 반환값을 계층이동(7->1)에 따라 합치고 변환하는 과정을 거쳐 나에게 온다
+    나의 컴퓨터는 받은 데이터가 80포트(브라우저)를 가리킬 것이고 브라우저는 받은 데이터를 http 규격에 맞춰 naver.com 메인페이지를 화면에 출력한다
+    www 이후 많은 브라우저가 생겼으며 각 브라우저는 각자만의 기능들을 추가하였고, 브라우저 자체 내장된 기술이 거듭 발전하면서 브라우저의 기능을 사용하기 위해 
+    a브라우저 전용페이지, b브라우저 전용페이지 등이 생기다가 html5 이후 호환성 문제가 빈번했다. 도태된 explorer를 시작으로 많은 브라우저가 브라우저 시장에서는 찾아보기 힘들어 졌고,
+    현재 20201031에는 크롬이 전세계에서 가장 많이 사용되는 브라우저이다.
+    
+3) HTML - HyperText Markup Language
+ 3.0 기초배우기
+  3.1 tag
+    <html>
+      웹페이지의 시작과 끝
+    <head>
+      <title>, <meta> 등이 들어간다. 정보, 문서 등 외부 파일 링크할때 사용 / 데이터를 위한 데이터 meta data
+    </head>
+    <body>
+      표시할 내용들을 나타내는 구간//기초 태그 - https://pridiot.tistory.com/6
+    </body>
+    </html>
+  3.2 css - Cascading Style Sheets
+    HTML, XHTML, XML 같은 문서의 스타일을 꾸미기위한 스타일 시트 언어
+  3.3 dom - Document Object Model
+    DOM(문서객체모델) 웹페이지에 대한 프로그래밍 인터페이스
+    기본적으로 여러 프로그램(DevTools(여러 기능을 포함한 Spring Boot 모듈))들이 페이지의 콘텐츠 및 구조, 그리고 스타일을 읽고 조작할 수 있는 API를 제공
+    DOM은 HTML 문서의 내용을 볼 수 있는 인터페이스 역할을 하는 동시에 동적 자원이 되어 수정될 수 있음
+    <!doctype html>
+    <html> //DOM은 아래의 <head>나 <body>, <tbody>등의 구조가 정의되지 않아도 문서의 내용과 구조가 객체모델로 저장되어 다양한 프로그램에서 사용 될 수 있음
+      <i>hello</i>
+      <p>world</p>
+    </html>
+    
+    JavaScript - helloworld.js
+      const i = document.createElement('i');
+      const iContent = document.createTextNode('HELLO');
+      i.appendChild(iContent);
+      document.body.appendChild(i);
+      const p = document.createElement('p');
+      const pContent = document.createTextNode('WORLD');
+      p.appendChild(pContent);
+      document.body.appendChild(p);
+      
+  3.4 svg
+  3.5 xhtml
+  3.6 xml
